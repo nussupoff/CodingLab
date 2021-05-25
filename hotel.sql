@@ -1,32 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Oct 10, 2020 at 06:23 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.39
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `sourcecodester_hoteldb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `contact`
---
 
 CREATE TABLE `contact` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -37,11 +15,7 @@ CREATE TABLE `contact` (
   `approval` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `login`
---
 
 CREATE TABLE `login` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -49,18 +23,11 @@ CREATE TABLE `login` (
   `pass` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `login`
---
 
 INSERT INTO `login` (`id`, `usname`, `pass`) VALUES
 (1, 'janobe', 'janobe');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `newsletterlog`
---
 
 CREATE TABLE `newsletterlog` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -69,18 +36,10 @@ CREATE TABLE `newsletterlog` (
   `news` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `newsletterlog`
---
 
 INSERT INTO `newsletterlog` (`id`, `title`, `subject`, `news`) VALUES
 (1, 'asd', 'Send me an Email', 'asd');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `payment`
---
 
 CREATE TABLE `payment` (
   `id` int(11) DEFAULT NULL,
@@ -100,18 +59,11 @@ CREATE TABLE `payment` (
   `noofdays` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `payment`
---
 
 INSERT INTO `payment` (`id`, `title`, `fname`, `lname`, `troom`, `tbed`, `nroom`, `cin`, `cout`, `ttot`, `fintot`, `mepr`, `meal`, `btot`, `noofdays`) VALUES
 (2, 'Dr.', 'janobe', 'janobe', 'Superior Room', 'Single', 1, '2020-10-10', '2020-10-11', 320.00, 323.20, 0.00, 'Room only', 3.20, 1);
+le structure for table `room`
 
--- --------------------------------------------------------
-
---
--- Table structure for table `room`
---
 
 CREATE TABLE `room` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -120,10 +72,6 @@ CREATE TABLE `room` (
   `place` varchar(10) DEFAULT NULL,
   `cusid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `room`
---
 
 INSERT INTO `room` (`id`, `type`, `bedding`, `place`, `cusid`) VALUES
 (1, 'Superior Room', 'Single', 'Free', 0),
@@ -142,11 +90,6 @@ INSERT INTO `room` (`id`, `type`, `bedding`, `place`, `cusid`) VALUES
 (14, 'Single Room', 'Double', 'Free', NULL),
 (15, 'Single Room', 'Triple', 'Free', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `roombook`
---
 
 CREATE TABLE `roombook` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -167,75 +110,39 @@ CREATE TABLE `roombook` (
   `nodays` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `contact`
---
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `login`
---
+
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `newsletterlog`
---
+
 ALTER TABLE `newsletterlog`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `room`
---
+
 ALTER TABLE `room`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `roombook`
---
+
 ALTER TABLE `roombook`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `contact`
---
 ALTER TABLE `contact`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT for table `login`
---
 ALTER TABLE `login`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT for table `newsletterlog`
---
+
 ALTER TABLE `newsletterlog`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
---
--- AUTO_INCREMENT for table `room`
---
 ALTER TABLE `room`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
---
--- AUTO_INCREMENT for table `roombook`
---
 ALTER TABLE `roombook`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
